@@ -1,0 +1,682 @@
+@font-face {
+    font-family: 'Atziluth-Script_1';
+    src: url('../fonts/Atziluth-Script_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--gold:#c9a96e;
+--gold-dark:#a88446;
+--champagne:#f7f2ea;
+--cream:#fffdf9;
+--brown:#4e3d2b;
+--light-brown:#8d7152;
+--white:#ffffff;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:var(--champagne);
+color:var(--brown);
+overflow-x:hidden;
+line-height:1.7;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.03;
+background-image:url('../img/ornament.svg');
+background-repeat:repeat;
+background-size:300px;
+z-index:-1;
+}
+
+h1,h2,h3,h4{
+font-family:'Cormorant Garamond',serif;
+}
+
+a{
+text-decoration:none;
+}
+
+img{
+width:100%;
+display:block;
+}
+
+.section{
+padding:120px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:4rem;
+color:var(--gold-dark);
+margin-bottom:60px;
+}
+
+.section-title::after{
+content:"";
+width:120px;
+height:2px;
+background:var(--gold);
+display:block;
+margin:20px auto 0;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('../img/hero.jpg');
+background-size:cover;
+background-position:center;
+
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+color:#fff;
+}
+
+.hero-top{
+display:block;
+letter-spacing:8px;
+text-transform:uppercase;
+margin-bottom:20px;
+}
+
+.hero h1,
+.hero h1 span {
+    font-family: 'Atziluth-Script_1', serif;
+}
+
+.hero h1{
+font-size:9rem;
+line-height:1;
+}
+
+.hero h1 span{
+color:var(--gold);
+}
+
+.hero-date{
+font-size:1.4rem;
+margin-top:20px;
+letter-spacing:3px;
+}
+
+.hero-subtitle{
+max-width:700px;
+margin:30px auto;
+font-size:1.1rem;
+}
+
+.btn-main{
+display:inline-block;
+padding:18px 40px;
+border:none;
+border-radius:60px;
+background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+color:#fff;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-main:hover{
+transform:translateY(-4px);
+color:#fff;
+}
+
+.scroll-down{
+position:absolute;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+color:#fff;
+font-size:2rem;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateX(-50%) translateY(0);
+}
+50%{
+transform:translateX(-50%) translateY(10px);
+}
+}
+
+/* INVITATION */
+
+.invite-card{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(12px);
+padding:60px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.invite-card h2{
+font-size:3rem;
+margin-bottom:25px;
+}
+
+.invite-card p{
+font-size:1.1rem;
+margin-bottom:15px;
+}
+
+.signature{
+margin-top:30px;
+font-size:2rem;
+color:var(--gold-dark);
+}
+
+/* COUNTDOWN */
+
+.countdown-wrapper{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.counter-box{
+width:180px;
+height:180px;
+background:#fff;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.counter-box span{
+font-size:4rem;
+font-weight:700;
+color:var(--gold-dark);
+}
+
+.counter-box small{
+text-transform:uppercase;
+letter-spacing:2px;
+}
+
+/* DATE */
+
+.date-card{
+max-width:500px;
+margin:auto;
+background:#fff;
+padding:60px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.date-card h2{
+font-size:3rem;
+}
+
+.date-number{
+width:120px;
+height:120px;
+margin:30px auto;
+border-radius:50%;
+background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:3rem;
+font-weight:bold;
+}
+
+/* TIMELINE */
+
+.timeline{
+max-width:900px;
+margin:auto;
+position:relative;
+}
+
+.timeline::before{
+content:"";
+position:absolute;
+left:50%;
+top:0;
+bottom:0;
+width:3px;
+background:var(--gold);
+}
+
+.timeline-item{
+width:50%;
+padding:25px 40px;
+position:relative;
+}
+
+.timeline-item:nth-child(odd){
+left:0;
+text-align:right;
+}
+
+.timeline-item:nth-child(even){
+left:50%;
+}
+
+.timeline-item::after{
+content:"";
+position:absolute;
+width:18px;
+height:18px;
+border-radius:50%;
+background:var(--gold-dark);
+top:35px;
+}
+
+.timeline-item:nth-child(odd)::after{
+right:-10px;
+}
+
+.timeline-item:nth-child(even)::after{
+left:-8px;
+}
+
+.time{
+font-size:2rem;
+font-weight:700;
+color:var(--gold-dark);
+}
+
+.text{
+font-size:1.05rem;
+}
+
+/* VENUE */
+
+.venue-card{
+max-width:900px;
+margin:auto;
+background:#fff;
+padding:60px;
+text-align:center;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.venue-card h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.venue-card h3{
+color:var(--gold-dark);
+margin-bottom:10px;
+}
+
+/* MAP */
+
+.map-wrapper{
+  width:100%;
+    height:500px;
+    border:none;
+    border-radius:30px;
+}
+
+.map-wrapper iframe{
+width:100%;
+height:500px;
+border:none;
+}
+
+/* DRESS CODE */
+
+.dress-section{
+background:#fff;
+}
+
+.dress-text{
+text-align:center;
+max-width:700px;
+margin:0 auto 40px;
+}
+
+.palette{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.color{
+width:80px;
+height:80px;
+border-radius:50%;
+border:3px solid #fff;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.c1{background:#f7f2ea;}
+.c2{background:#efe2c9;}
+.c3{background:#d9c2a3;}
+.c4{background:#b89663;}
+.c5{background:#7a5d3b;}
+
+/* GALLERY */
+
+.weddingSwiper{
+border-radius:30px;
+overflow:hidden;
+}
+
+.swiper-slide img{
+height:650px;
+object-fit:cover;
+}
+
+/* RSVP */
+
+#rsvpForm{
+max-width:700px;
+margin:auto;
+}
+
+.form-control{
+min-height:60px;
+border-radius:20px;
+border:1px solid #ddd;
+}
+
+.form-control:focus{
+box-shadow:none;
+border-color:var(--gold);
+}
+
+.attendance-options{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.attendance-card{
+cursor:pointer;
+}
+
+.attendance-card input{
+display:none;
+}
+
+.attendance-card span{
+display:block;
+background:#fff;
+padding:30px;
+border-radius:20px;
+text-align:center;
+border:2px solid transparent;
+transition:.3s;
+}
+
+.attendance-card input:checked + span{
+border-color:var(--gold);
+background:#fff8ee;
+}
+
+.alert{
+border-radius:20px;
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+color:#fff;
+font-size:1.5rem;
+z-index:999;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.info-btn{
+position:fixed;
+right:20px;
+bottom:100px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+color:#fff;
+font-size:1.5rem;
+z-index:999;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+/* FOOTER */
+
+footer{
+position:relative;
+padding:140px 20px;
+text-align:center;
+color:#fff;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('../img/footer.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.footer-content{
+position:relative;
+z-index:2;
+}
+
+.footer-content h2{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.footer-content p{
+font-size:1.5rem;
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+
+.hero h1{
+    font-size:5rem;
+}
+
+.timeline::before{
+    left:20px;
+}
+
+.timeline-item{
+    width:100%;
+    left:0!important;
+    padding-left:60px;
+    text-align:left!important;
+}
+
+.timeline-item::after{
+    left:12px!important;
+}
+
+.swiper-slide img{
+    height:450px;
+}
+
+
+}
+
+@media(max-width:768px){
+
+
+.section{
+    padding:80px 0;
+}
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+.section-title{
+    font-size:2.5rem;
+}
+
+.invite-card{
+    padding:35px 25px;
+}
+
+.invite-card h2{
+    font-size:2rem;
+}
+
+.counter-box{
+    width:140px;
+    height:140px;
+}
+
+.counter-box span{
+    font-size:2.8rem;
+}
+
+.attendance-options{
+    grid-template-columns:1fr;
+}
+
+.map-wrapper iframe{
+    height:350px;
+}
+
+.footer-content h2{
+    font-size:2.5rem;
+}
+
+
+}
+
+@media(max-width:576px){
+
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+.hero-date{
+    font-size:1rem;
+}
+
+.counter-box{
+    width:120px;
+    height:120px;
+}
+
+.counter-box span{
+    font-size:2rem;
+}
+
+.date-card{
+    padding:35px 20px;
+}
+
+.swiper-slide img{
+    height:300px;
+}
+
+
+}
+
+
+.wedding-started{
+font-size:2rem;
+text-align:center;
+color:var(--gold-dark);
+font-family:'Cormorant Garamond',serif;
+padding:40px;
+}
+
+
+.language-switcher{
+    position:absolute;
+    top:30px;
+    right:30px;
+    z-index:1000;
+    display:flex;
+    gap:10px;
+}
+
+.lang-btn{
+    text-decoration:none;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.4);
+    padding:8px 16px;
+    border-radius:30px;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.lang-btn:hover{
+    background:rgba(255,255,255,.15);
+    color:#fff;
+}
+
+.lang-btn.active{
+    background:#fff;
+    color:#111;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+    .language-switcher{
+        top:20px;
+        right:20px;
+    }
+
+    .lang-btn{
+        padding:6px 12px;
+        font-size:12px;
+    }
+
+}
